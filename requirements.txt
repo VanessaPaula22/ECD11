@@ -1,7 +1,8 @@
 numpy
-matplotlib.pyplot
+matplotlib
 torch
 time
 os
+urllib
 flake8
 pytest
