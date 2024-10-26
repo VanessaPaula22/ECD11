@@ -1,4 +1,3 @@
-get_ipython().run_line_magic('matplotlib', 'notebook')
 import numpy as np
 import pickle, gzip
 import mlp
