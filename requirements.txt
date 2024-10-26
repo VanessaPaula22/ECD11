@@ -1,7 +1,6 @@
 numpy
 matplotlib
 torch
-time
 os
 urllib
 flake8
