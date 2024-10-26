@@ -1,6 +1,5 @@
 numpy
 matplotlib
 torch
-urllib
 flake8
 pytest
