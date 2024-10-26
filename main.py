@@ -1,5 +1,5 @@
-from pipeline.class.mlp import Mlp
-from pipeline.useful_functions import initalize_weights_relu, load_mnist,  
+import pipeline.class.mlp
+from pipeline.useful_functions import initalize_weights_relu, load_mnist
 
 def main ():
   # Training with 400 epochs
