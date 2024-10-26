@@ -1,5 +1,4 @@
 numpy
-gzip
 matplotlib.pyplot
 torch
 time
