@@ -1,12 +1,26 @@
 import numpy as np
 from pipeline.mlp.mlp import Mlp
-from pipeline.useful_functions import initalize_weights_relu, load_mnist
+from pipeline.useful_functions import initalize_weights_relu 
+
+def create_synthetic_data(num_samples=1000, num_features=784, num_classes=10):
+    # Generate random features
+    X = np.random.rand(num_samples, num_features)
+    # Generate random labels (one-hot encoded)
+    y = np.random.randint(num_classes, size=num_samples)
+    
+    # Convert labels to one-hot encoding
+    Y = np.zeros((num_samples, num_classes))
+    for i in range(num_samples):
+        Y[i, y[i]] = 1
+        
+    return X, Y, y
 
 def test_mlp_training():
     # Test parameters
     epochs = 10  # Reduced for testing speed
-    X, Y, labels, y = load_mnist()
-    
+    num_samples = 1000  # Number of synthetic samples
+    X, Y, y = create_synthetic_data(num_samples)
+
     # Create the MLP model
     mlp_classifier = Mlp(size_layers=[784, 100, 10], 
                          act_funct='relu',
@@ -25,8 +39,7 @@ def test_mlp_training():
     
     # Calculate accuracy
     y_tmp = np.argmax(Y_hat, axis=1)
-    y_hat = labels[y_tmp]
-    acc = np.mean(1 * (y_hat == y))
+    acc = np.mean(y_tmp == np.argmax(Y, axis=1))  # Compare predicted and true labels
     
     # Assertions to validate functionality
     assert Y_hat.shape == (X.shape[0], 10), "Output shape mismatch"
