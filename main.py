@@ -1,10 +1,11 @@
 from pipeline.mlp.mlp import Mlp
 from pipeline.useful_functions import initalize_weights_relu, load_mnist
+import time
 
 def main ():
   # Training with 400 epochs
   epochs = 400
-  loss = np.zeros([epochs,1])
+  loss = numpy.zeros([epochs,1])
   
   
   # ## 1. Own implementation, class MLP
@@ -15,7 +16,7 @@ def main ():
   tic = time.time()
   
   # Creating the MLP object initialize the weights
-  mlp_classifier = mlp.Mlp(size_layers = [784, 100, 10], 
+  mlp_classifier = Mlp(size_layers = [784, 100, 10], 
                            act_funct   = 'relu',
                            reg_lambda  = 0,
                            bias_flag   = False)
@@ -24,21 +25,21 @@ def main ():
       mlp_classifier.train(X, Y, 1)
       Y_hat = mlp_classifier.predict(X)
       # loss
-      loss[ix] = (0.5)*np.square(Y_hat - Y).mean()
+      loss[ix] = (0.5)*numpy.square(Y_hat - Y).mean()
   
   print(str(time.time() - tic) + ' s')
           
   # Ploting loss vs epochs
   plt.figure()
-  ix = np.arange(epochs)
+  ix = numpy.arange(epochs)
   plt.plot(ix, loss)
   
   # Training Accuracy
   Y_hat = mlp_classifier.predict(X)
-  y_tmp = np.argmax(Y_hat, axis=1)
+  y_tmp = numpy.argmax(Y_hat, axis=1)
   y_hat = labels[y_tmp]
   
-  acc = np.mean(1 * (y_hat == y))
+  acc = numpy.mean(1 * (y_hat == y))
   print('Training Accuracy: ' + str(acc*100))
   
   
@@ -66,7 +67,7 @@ def main ():
       Y_hat = a3
       
       # Compute loss
-      loss[ix] = (0.5) * np.square(Y_hat - Y).mean()
+      loss[ix] = (0.5) * numpy.square(Y_hat - Y).mean()
       # Backprop to compute gradients of w1 and w2 with respect to loss
       d3 = Y_hat - Y
       grad2 = a2.T.dot(d3) / n_examples
@@ -83,11 +84,11 @@ def main ():
       
   # Ploting loss vs epochs
   plt.figure()
-  ix = np.arange(epochs)
+  ix = numpy.arange(epochs)
   plt.plot(ix, loss)
   
   # Training Accuracy
-  acc = np.mean(1 * (y_hat == y))
+  acc = numpy.mean(1 * (y_hat == y))
   print('Training Accuracy: ' + str(acc*100))
       
 if __name__ == "__main__":
