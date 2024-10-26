@@ -1,6 +1,5 @@
 import numpy as np
 import pickle, gzip
-import mlp
 import matplotlib.pyplot as plt
 import torch
 import time
