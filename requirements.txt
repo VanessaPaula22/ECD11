@@ -3,6 +3,5 @@ matplotlib.pyplot
 torch
 time
 os
-urllib.request
 flake8
 pytest
