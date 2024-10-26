@@ -68,9 +68,9 @@ def main ():
       # Forward pass: compute y_hat    
       a1 = X
       z2 = a1.dot(w1)
-      a2 = np.maximum(z2, 0)
+      a2 = numpy.maximum(z2, 0)
       z3 = a2.dot(w2)
-      a3 = np.maximum(z3, 0)
+      a3 = numpy.maximum(z3, 0)
       Y_hat = a3
       
       # Compute loss
