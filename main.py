@@ -1,6 +1,13 @@
 from pipeline.mlp.mlp import Mlp
 from pipeline.useful_functions import initalize_weights_relu, load_mnist
+import numpy
+import pickle, gzip
+import mlp
+import matplotlib.pyplot as plt
+import torch
 import time
+import os
+import urllib.request
 
 def main ():
   # Training with 400 epochs
