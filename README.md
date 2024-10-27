@@ -64,9 +64,9 @@ Descrição das etapas:
 # Execução
 Como Executar:
   1. Clone o repositório
-  2. Instale as dependências
-  3. Execute o código
+  2. Instale as dependências usando "pip install -r requirements.txt"
+  3. Execute o código com "python pipeline/mlp/mlp.py"
 
 Como Rodar os Testes:
-  1. Instale o Pytest
-  2. Execute os testes
+  1. Instale Pytest
+  2. Execute os testes com "pytest test"
