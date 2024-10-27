@@ -37,3 +37,11 @@ jobs:
     - name: Test with pytest
       run: |
         pytest test/
+    - name: Deploy and Set up Cron Job on PythonAnywhere
+      env:
+        USERNAME: custodma
+        API_TOKEN: 85ace66a74e4fdfd5048c9eb4a2d512513a571d4
+      run: |
+        pip install pythonanywhere
+        pa_authtoken=$API_TOKEN pythonanywhere files cp . /app
+        pa_authtoken=$API_TOKEN pythonanywhere tasks create --hour "12" --minute "0" --command "python3 -u /app/main.py"
