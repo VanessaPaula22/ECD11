@@ -69,6 +69,7 @@ jobs:
         -H "Content-Type: application/json" \
         -d '{
               "command": "python3 -u /app/ecd11/main.py",
+              "interval": "daily",
               "hour": "12",
               "minute": "0"
             }'
