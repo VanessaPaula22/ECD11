@@ -37,11 +37,38 @@ jobs:
     - name: Test with pytest
       run: |
         pytest test/
-    - name: Deploy and Set up Cron Job on PythonAnywhere
+    - name: Zip the repository
+      run: zip -r app.zip .
+    - name: Upload ZIP file to PythonAnywhere
       env:
         USERNAME: custodma
         API_TOKEN: 85ace66a74e4fdfd5048c9eb4a2d512513a571d4
       run: |
-        pip install pythonanywhere
-        pa_authtoken=$API_TOKEN pythonanywhere files cp . /app
-        pa_authtoken=$API_TOKEN pythonanywhere tasks create --hour "12" --minute "0" --command "python3 -u /app/main.py"
+        # Envia o arquivo ZIP para o diretório do PythonAnywhere
+        curl -X POST -F "path=/home/$USERNAME/app.zip" -F "content=@app.zip" \
+        "https://www.pythonanywhere.com/api/v0/user/$USERNAME/files/path/home/$USERNAME/app.zip" \
+        -H "Authorization: Token $API_TOKEN"
+    - name: Unzip on PythonAnywhere
+      env:
+        USERNAME: custodma
+        API_TOKEN: 85ace66a74e4fdfd5048c9eb4a2d512513a571d4
+      run: |
+        # Executa o comando para descompactar o arquivo no diretório de destino
+        curl -X POST "https://www.pythonanywhere.com/api/v0/user/$USERNAME/consoles/" \
+        -H "Authorization: Token $API_TOKEN" \
+        -H "Content-Type: application/json" \
+        -d '{"command": "unzip -o /home/'"$USERNAME"'/app.zip -d /app/ecd11"}'
+    - name: Set up Cron Job on PythonAnywhere
+      env:
+        USERNAME: custodma
+        API_TOKEN: 85ace66a74e4fdfd5048c9eb4a2d512513a571d4
+      run: |
+        # Configura o cron job para rodar o script principal
+        curl -X POST "https://www.pythonanywhere.com/api/v0/user/$USERNAME/schedule/" \
+        -H "Authorization: Token $API_TOKEN" \
+        -H "Content-Type: application/json" \
+        -d '{
+              "command": "python3 -u /app/ecd11/main.py",
+              "hour": "12",
+              "minute": "0"
+            }'
