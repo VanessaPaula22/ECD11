@@ -57,7 +57,7 @@ jobs:
         curl -X POST "https://www.pythonanywhere.com/api/v0/user/$USERNAME/consoles/" \
         -H "Authorization: Token $API_TOKEN" \
         -H "Content-Type: application/json" \
-        -d '{"command": "unzip -o /home/'"$USERNAME"'/app.zip -d /app/ecd11"}'
+        -d '{"command": "unzip -o /home/'"$USERNAME"'/app.zip -d /home/ecd11"}'
     - name: Set up Cron Job on PythonAnywhere
       env:
         USERNAME: custodma
@@ -68,7 +68,7 @@ jobs:
         -H "Authorization: Token $API_TOKEN" \
         -H "Content-Type: application/json" \
         -d '{
-              "command": "python3 -u /app/ecd11/main.py",
+              "command": "python3 -u /home/ecd11/main.py",
               "interval": "daily",
               "hour": "12",
               "minute": "0"
