@@ -68,7 +68,7 @@ jobs:
         -H "Authorization: Token $API_TOKEN" \
         -H "Content-Type: application/json" \
         -d '{
-              "command": "python3 -u /home/ecd11/'$USERNAME'/main.py",
+              "command": "python3 -u /home/'$USERNAME'/ecd11/main.py",
               "interval": "daily",
               "hour": "12",
               "minute": "0"
