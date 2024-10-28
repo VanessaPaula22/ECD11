@@ -59,7 +59,7 @@ Descrição das etapas:
 
  - Testes Automatizados / Análise de qualidade: Scripts de teste verificam automaticamente a funcionalidade e a estabilidade do código, identificando possíveis erros.
 
- - Zip do projeto e envio à plataforma PythonAnywhere da Anaconda, através de requests http, unzip e criação de task com schedule para execução automática do código.
+ - Deploy: Zip do projeto e envio à plataforma PythonAnywhere da Anaconda, através de requests http, unzip e criação de task com schedule para execução automática do código.
 
 Print da task de execução sobre o código:
 ![image](https://github.com/user-attachments/assets/90195add-45e5-4aa0-b516-20be00bb7776)
@@ -72,7 +72,7 @@ Também utilizamos o Flake8 como ferramenta de análise de qualidade de código.
 Como Executar:
   1. Clone o repositório
   2. Instale as dependências usando "pip install -r requirements.txt"
-  3. Execute o código com "python pipeline/mlp/mlp.py"
+  3. Execute o código com "python -u main.py"
 
 Como Rodar os Testes:
   1. Instale Pytest
