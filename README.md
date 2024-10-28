@@ -57,7 +57,12 @@ Descrição das etapas:
 
  - Instalação de Dependências: Dependências e bibliotecas necessárias para o projeto são instaladas, garantindo o ambiente adequado para testes e execução.
 
- - Testes Automatizados: Scripts de teste verificam automaticamente a funcionalidade e a estabilidade do código, identificando possíveis erros.
+ - Testes Automatizados / Análise de qualidade: Scripts de teste verificam automaticamente a funcionalidade e a estabilidade do código, identificando possíveis erros.
+
+Print da última execução de testes automatizados sobre o código:
+![image](https://github.com/user-attachments/assets/90195add-45e5-4aa0-b516-20be00bb7776)
+
+Também utilizamos o Flake8 como ferramenta de análise de qualidade de código. A ferramenta verifica o estilo do código e aponta possíveis problemas de segurança. Essa verificação acontece durante a etapa de Testes automatizados, como forma de controle de qualidade do código.
 
  - Deploy: O código aprovado é implantado em um ambiente de produção ou teste, tornando-o acessível aos usuários finais ou testadores.
 
