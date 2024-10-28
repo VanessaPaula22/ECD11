@@ -4,7 +4,6 @@ import numpy
 import matplotlib.pyplot as plt
 import time
 
-
 def main ():
   # Training with 400 epochs
   epochs = 400
