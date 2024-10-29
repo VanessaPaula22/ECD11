@@ -1,6 +1,6 @@
-# ECD11_v2
+# ECD11
 
-Um projeto básico de um Perceptron de Multicamadas (MLP) para o trabalho final da disciblina de Entrega Contínua e DevOps (ECD11).
+Um projeto básico de um Perceptron de Multicamadas (MLP) para o trabalho final da disciplina de Entrega Contínua e DevOps (ECD11).
 
 # Estrutura do Projeto
 .
