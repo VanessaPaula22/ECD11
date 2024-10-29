@@ -40,7 +40,8 @@ Boas práticas utilizadas:
 
  - Controle de versionamento através do GitHub
  - O código fonte foi organizado em diretórios, separando a lógica da aplicação dos testes automatizados
- - Convenções de commits com o uso de mensagens claras e descritivas.
+ - Convenções de commits com o uso de mensagens claras e descritivas
+ - Criação de branch "dev" para o desenvolvimento.
 
 # Diagrama do Processo de CI:
 ![image](https://github.com/user-attachments/assets/42ebb1a7-517f-4d35-ab67-cc31418330d9)
@@ -57,12 +58,16 @@ Descrição das etapas:
 
  - Instalação de Dependências: Dependências e bibliotecas necessárias para o projeto são instaladas, garantindo o ambiente adequado para testes e execução.
 
- - Testes Automatizados / Análise de qualidade: Scripts de teste verificam automaticamente a funcionalidade e a estabilidade do código, identificando possíveis erros.
+ - Testes Automatizados / Análise de qualidade: Scripts de teste verificam automaticamente a funcionalidade e a estabilidade do código, identificando possíveis erros. Foi utilizado o pytest como ferramenta de teste automatizado.
 
  - Deploy: Zip do projeto e envio à plataforma PythonAnywhere da Anaconda, através de requests http, unzip e criação de task com schedule para execução automática do código.
 
 Print da task de execução sobre o código:
 ![image](https://github.com/user-attachments/assets/90195add-45e5-4aa0-b516-20be00bb7776)
+
+Upload do repositório na plataforma de execução:
+![WhatsApp Image 2024-10-27 at 12 55 48](https://github.com/user-attachments/assets/ec617b51-a41f-4eb3-9556-5f2d3686840a)
+
 
 Também utilizamos o Flake8 como ferramenta de análise de qualidade de código. A ferramenta verifica o estilo do código e aponta possíveis problemas de segurança. Essa verificação acontece durante a etapa de Testes automatizados, como forma de controle de qualidade do código.
 
