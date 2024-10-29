@@ -66,8 +66,7 @@ Print da task de execução sobre o código:
 ![image](https://github.com/user-attachments/assets/90195add-45e5-4aa0-b516-20be00bb7776)
 
 Upload do repositório na plataforma de execução:
-![WhatsApp Image 2024-10-27 at 12 55 48](https://github.com/user-attachments/assets/ec617b51-a41f-4eb3-9556-5f2d3686840a)
-
+![WhatsApp Image 2024-10-27 at 12 51 09](https://github.com/user-attachments/assets/06b37ee9-f93c-460f-a3f2-b7229de66384)
 
 Também utilizamos o Flake8 como ferramenta de análise de qualidade de código. A ferramenta verifica o estilo do código e aponta possíveis problemas de segurança. Essa verificação acontece durante a etapa de Testes automatizados, como forma de controle de qualidade do código.
 
